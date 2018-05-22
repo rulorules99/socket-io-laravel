@@ -4,6 +4,10 @@ const io    = require('socket.io')(http);
 const redis = require('ioredis')();
 const err   = function(err, count) {};
 
+app.get('/', function (req, res) {
+    res.send('Redis server is running with node');
+});
+
 redis.subscribe('test-channel',err);
 redis.subscribe('chat',err);
 
